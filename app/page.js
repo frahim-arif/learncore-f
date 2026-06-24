@@ -1,7 +1,7 @@
 // app/page.js
 import CourseCard from "./components/CourseCard";
 import Link from "next/link";
-import { COURSES } from "./data/courses";
+import { COURSES } from "./Data/courses";
 
 export default function Home() {
   const popularCourse = COURSES[0];
