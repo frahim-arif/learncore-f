@@ -1,8 +1,9 @@
 // app/checkout/page.js
 'use client'
+import axios from 'axios'
 import { useSearchParams } from 'next/navigation'
 import { useState } from 'react'
-import axios from 'axios'
+
 
 export default function CheckoutPage() {
   const params = useSearchParams()
