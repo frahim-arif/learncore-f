@@ -1,6 +1,6 @@
 "use client";
 
-import { COURSES } from "../../data/courses";
+import { COURSES } from "../../Data/courses";
 import { useParams } from "next/navigation";
 import { useState } from "react";
 
