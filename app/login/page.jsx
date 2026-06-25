@@ -30,36 +30,41 @@ export default function LoginPage() {
     setMsg("");
     setSuccess(false);
 
-    try {
-      const res = await fetch("http://localhost:5000/api/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(form),
-      });
-
-      const data = await res.json();
-
-      if (data.success) {
-        localStorage.setItem("token", data.token);
-        localStorage.setItem("user", JSON.stringify(data.user));
-
-        setSuccess(true);
-        setMsg("Login successful");
-
-        router.push("/dashboard");
-      } else {
-        setSuccess(false);
-        setMsg(data.message || "Login failed");
-      }
-    } catch (err) {
-      setSuccess(false);
-      setMsg("Server error. Backend URL check karo.");
-    } finally {
-      setLoading(false);
+   try {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/login`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(form),
     }
-  };
+  );
+
+  const data = await res.json();
+
+  if (data.success) {
+    localStorage.setItem("token", data.token);
+    localStorage.setItem("user", JSON.stringify(data.user));
+
+    setSuccess(true);
+    setMsg("Login successful");
+
+    router.push("/dashboard");
+  } else {
+    setSuccess(false);
+    setMsg(data.message || "Login failed");
+  }
+} catch (err) {
+  console.error(err);
+
+  setSuccess(false);
+  setMsg("Server error. Please try again.");
+} finally {
+  setLoading(false);
+}
+  }
 
   return (
     <main className="min-h-screen bg-gray-50 flex items-center justify-center px-4 py-16">
