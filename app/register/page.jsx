@@ -32,35 +32,37 @@ export default function RegisterPage() {
     setSuccess(false);
 
     try {
-      const res = await fetch("http://localhost:5000/api/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(form),
-      });
-
-      const data = await res.json();
-
-      if (data.success) {
-        setSuccess(true);
-        setMsg("Register successful. Please login.");
-
-        setTimeout(() => {
-          router.push("/login");
-        }, 1000);
-      } else {
-        setSuccess(false);
-        setMsg(data.message || "Register failed");
-      }
-    } catch (err) {
-      setSuccess(false);
-      setMsg("Server error");
-    } finally {
-      setLoading(false);
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/register`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(form),
     }
-  };
+  );
 
+  const data = await res.json();
+
+  if (data.success) {
+    setSuccess(true);
+    setMsg("Register successful. Please login.");
+
+    setTimeout(() => {
+      router.push("/login");
+    }, 1000);
+  } else {
+    setSuccess(false);
+    setMsg(data.message || "Register failed");
+  }
+} catch (err) {
+  setSuccess(false);
+  setMsg("Server error");
+} finally {
+  setLoading(false);
+}
+  }
   return (
     <main className="min-h-screen bg-gray-50 flex items-center justify-center px-4 py-16">
       <div className="w-full max-w-md bg-white rounded-3xl shadow-sm border border-gray-200 p-8">
