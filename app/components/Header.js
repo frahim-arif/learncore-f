@@ -1,8 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+
 import { FiMenu, FiX } from "react-icons/fi";
+
+
 
 const menuItems = [
   { name: "Home", href: "/" },
@@ -40,11 +44,23 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
+          {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
+            <div className="relative w-12 h-12 overflow-hidden rounded-xl border border-gray-200">
+              <Image
+                src="https://frahim.vercel.app/images/logo.jpeg"
+                alt="WebcoreCubeTech"
+                fill
+                className="object-cover"
+                unoptimized
+              />
+            </div>
+
             <div>
               <h2 className="text-lg font-bold text-gray-900">
                 Learn.WebcoreCubeTech
               </h2>
+
               <p className="text-xs text-gray-500">
                 Learn • Build • Grow
               </p>
