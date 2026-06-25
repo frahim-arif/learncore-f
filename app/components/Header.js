@@ -121,7 +121,7 @@ export default function Header() {
           {/* Mobile Button */}
           <button
             onClick={() => setOpen(!open)}
-            className="md:hidden p-2 rounded-lg border border-gray-200"
+            className="md:hidden p-2 rounded-lg border border-gray-300 bg-blue-600 text-white"
           >
             {open ? <FiX size={22} /> : <FiMenu size={22} />}
           </button>
