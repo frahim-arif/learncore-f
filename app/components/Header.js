@@ -168,7 +168,7 @@ export default function Header() {
                   <Link
                     href="/login"
                     onClick={() => setOpen(false)}
-                    className="px-4 py-3 rounded-xl border border-gray-200 text-center"
+                    className="px-4 py-3 rounded-xl bg-blue-600 text-yellow text-center font-semibold"
                   >
                     Login
                   </Link>
