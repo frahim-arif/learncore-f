@@ -1,29 +1,29 @@
 export const COURSES = [
   {
     id: "wd101",
-    title: "Web Development Level-1",
+    title: "Web Development Level 1",
     price: 3999,
-    hours: 110,
-    desc: "HTML5, CSS, JavaScript, JQuery,",
+    hours: "110+",
+    desc: "HTML5 • CSS3 • JavaScript • jQuery",
     details:
-      "Is course me HTML, CSS, JavaScript, JQuery practical project ke sath sikhaya jayega.",
+      "Learn HTML5, CSS3, JavaScript and jQuery with practical projects from beginner to intermediate level.",
   },
   {
-    id: "Frontend",
-    title: "Frontend Development Level-2",
+    id: "frontend",
+    title: "Frontend Development Level 2",
     price: 3999,
-    hours: 90,
-    desc: "Bootstrap,ReactJs,Firebase,Tailwind<br>NextJs",
+    hours: "90+",
+    desc: "Bootstrap • React • Firebase • Tailwind • Next.js",
     details:
-      "Is course me Node.js, Express.js, REST API, Authentication aur MongoDB sikhaya jayega.",
+      "Master modern frontend development with React, Next.js, Tailwind CSS, Bootstrap and Firebase.",
   },
   {
-    id: "Backend",
-    title: "NodeJs,ExpressJs,Mongodb<br>Mongooes,AWS,PaymentGetway",
+    id: "backend",
+    title: "Backend Development Level 3",
     price: 3999,
-    hours: 85,
-    desc: "Frontend, Backend and Real Projects",
+    hours: "85+",
+    desc: "Node.js • Express • MongoDB • Mongoose • AWS • Payment Gateway",
     details:
-      "Ye complete fullstack course hai jisme frontend, backend aur real projects included hain.",
+      "Build powerful backend applications using Node.js, Express.js, MongoDB, Mongoose, AWS and Payment Gateway integration.",
   },
 ];
