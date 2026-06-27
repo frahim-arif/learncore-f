@@ -106,30 +106,49 @@ export default function Home() {
   </div>
 </section>
       {/* COURSES SECTION */}
-      <section>
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
-          <div>
-            <p className="text-blue-700 font-semibold">Choose Your Course</p>
-            <h2 className="text-3xl font-extrabold mt-1">Our Courses</h2>
-            <p className="text-gray-600 mt-2">
-              Beginner se advanced tak complete web development learning path.
-            </p>
-          </div>
+<section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 px-5 py-10 md:p-12">
+  <div className="absolute -top-20 -right-20 h-64 w-64 rounded-full bg-blue-300/30 blur-3xl"></div>
+  <div className="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-purple-300/30 blur-3xl"></div>
 
-          <Link
-            href="/courses"
-            className="text-blue-700 font-semibold"
-          >
-            View all courses →
-          </Link>
-        </div>
+  <div className="relative">
+    <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8">
+      <div className="max-w-2xl">
+        <span className="inline-block rounded-full bg-blue-700/10 px-4 py-2 text-sm font-bold text-blue-700">
+          🎯 Choose Your Course
+        </span>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {COURSES.map((course) => (
-            <CourseCard key={course.id} course={course} />
-          ))}
+        <h2 className="mt-4 text-3xl md:text-5xl font-black text-gray-900">
+          Our{" "}
+          <span className="bg-gradient-to-r from-blue-700 via-purple-600 to-pink-500 bg-clip-text text-transparent">
+            Courses
+          </span>
+        </h2>
+
+        <p className="text-gray-600 mt-3 text-base md:text-lg">
+          Beginner se advanced tak complete web development learning path.
+        </p>
+      </div>
+
+      <Link
+        href="/courses"
+        className="inline-flex w-fit items-center justify-center rounded-xl bg-blue-700 px-5 py-3 text-white font-bold shadow-lg hover:bg-blue-800 transition"
+      >
+        View all courses →
+      </Link>
+    </div>
+
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {COURSES.map((course) => (
+        <div
+          key={course.id}
+          className="rounded-3xl bg-white/80 backdrop-blur-xl border border-white shadow-xl hover:-translate-y-2 hover:shadow-2xl transition duration-300"
+        >
+          <CourseCard course={course} />
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* WHY US */}
       <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
