@@ -58,3 +58,12 @@ body {
 .border-brand {
   border-color: var(--brand);
 }
+@keyframes spinSlow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 8s linear infinite;
+}

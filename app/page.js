@@ -9,101 +9,96 @@ export default function Home() {
   return (
     <div className="space-y-12">
       {/* HERO SECTION */}
-      <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-700 via-indigo-700 to-purple-700 text-white p-6 md:p-12">
-        <div className="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-white/10 blur-3xl"></div>
-        <div className="absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-white/10 blur-3xl"></div>
+<section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-950 via-blue-900 to-purple-900 text-white p-6 md:p-12">
+  <div className="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-cyan-400/20 blur-3xl"></div>
+  <div className="absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-pink-500/20 blur-3xl"></div>
 
-        <div className="relative max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          {/* Left Content */}
-          <div>
-            <span className="inline-block rounded-full bg-white/15 px-4 py-2 text-sm font-semibold mb-5">
-              🚀 Learn • Build • Earn
-            </span>
+  <div className="relative max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+    <div>
+      <span className="inline-block rounded-full bg-white/15 px-4 py-2 text-sm font-semibold mb-5">
+        🚀 Learn • Build • Earn
+      </span>
 
-            <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
-              Become a Web Developer with Real Projects
-            </h1>
+      <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
+        Become a{" "}
+        <span className="bg-gradient-to-r from-yellow-300 via-pink-400 to-cyan-300 bg-clip-text text-transparent">
+          Web Developer
+        </span>{" "}
+        with Real Projects
+      </h1>
 
-            <p className="mt-5 text-lg text-white/90">
-              HTML, CSS, JavaScript, React, Next.js, Node.js aur MongoDB practical
-              projects ke sath sikho.
-            </p>
+      <p className="mt-5 text-lg text-white/90">
+        HTML, CSS, JavaScript, React, Next.js, Node.js aur MongoDB practical
+        projects ke sath sikho.
+      </p>
 
-            <div className="mt-7 flex flex-wrap gap-3">
-              <Link
-                href="/courses"
-                className="px-6 py-3 rounded-xl bg-white text-blue-700 font-bold shadow-lg"
-              >
-                Start Learning
-              </Link>
+      <div className="mt-7 flex flex-wrap gap-3">
+        <Link
+          href="/courses"
+          className="px-6 py-3 rounded-xl bg-white text-blue-700 font-bold shadow-lg"
+        >
+          Start Learning
+        </Link>
 
-              <Link
-                href={`/courses/${popularCourse.id}`}
-                className="px-6 py-3 rounded-xl border border-white/30 font-semibold hover:bg-white/10"
-              >
-                View Popular Course
-              </Link>
-            </div>
+        <Link
+          href={`/courses/${popularCourse.id}`}
+          className="px-6 py-3 rounded-xl border border-white/30 font-semibold hover:bg-white/10"
+        >
+          View Popular Course
+        </Link>
+      </div>
 
-            <div className="mt-8 grid grid-cols-3 gap-4">
-              <div>
-                <h3 className="text-2xl font-bold">3+</h3>
-                <p className="text-sm text-white/80">Courses</p>
-              </div>
+      <div className="mt-8 grid grid-cols-3 gap-4">
+        <div className="rounded-2xl bg-white/10 border border-white/15 p-4 text-center">
+          <h3 className="text-2xl font-bold">3+</h3>
+          <p className="text-sm text-white/80">Courses</p>
+        </div>
 
-              <div>
-                <h3 className="text-2xl font-bold">150+</h3>
-                <p className="text-sm text-white/80">Hours</p>
-              </div>
+        <div className="rounded-2xl bg-white/10 border border-white/15 p-4 text-center">
+          <h3 className="text-2xl font-bold">150+</h3>
+          <p className="text-sm text-white/80">Hours</p>
+        </div>
 
-              <div>
-                <h3 className="text-2xl font-bold">100%</h3>
-                <p className="text-sm text-white/80">Practical</p>
-              </div>
-            </div>
-          </div>
+        <div className="rounded-2xl bg-white/10 border border-white/15 p-4 text-center">
+          <h3 className="text-2xl font-bold">100%</h3>
+          <p className="text-sm text-white/80">Practical</p>
+        </div>
+      </div>
+    </div>
 
-          {/* Right Owner Image */}
-          <div className="flex justify-center items-center">
-            <div className="text-center">
-              <div className="relative mx-auto w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80">
-                <div className="relative mx-auto w-44 h-44 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-80 lg:h-80">
+    <div className="flex justify-center">
+      <div className="text-center">
+        <div className="relative mx-auto w-44 h-44 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-80 lg:h-80">
+          <div className="absolute -inset-6 rounded-full bg-cyan-400/20 blur-3xl"></div>
 
-                  {/* Glow */}
-                  <div className="absolute inset-0 rounded-full bg-indigo-500/30 blur-3xl scale-110"></div>
+          <div className="absolute inset-0 rounded-full bg-[conic-gradient(#06b6d4,#3b82f6,#8b5cf6,#ec4899,#f59e0b,#06b6d4)] animate-spin-slow"></div>
 
-                  {/* Animated Border */}
-                  <div className="absolute inset-0 rounded-full p-[4px] bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 animate-spin-slow">
-                    <div className="w-full h-full rounded-full bg-transparent"></div>
-                  </div>
+          <div className="absolute inset-[6px] rounded-full bg-slate-950"></div>
 
-                  {/* Image */}
-                  <img
-                    src="https://frahim.vercel.app/_next/image?url=%2Fimages%2F1.jpg&w=384&q=75"
-                    alt="Owner"
-                    className="relative z-10 w-full h-full rounded-full object-cover border-[5px] border-[#0f172a]"
-                  />
-                </div>
+          <img
+            src="https://frahim.vercel.app/_next/image?url=%2Fimages%2F1.jpg&w=384&q=75"
+            alt="Owner"
+            className="absolute inset-[12px] z-10 w-[calc(100%-24px)] h-[calc(100%-24px)] rounded-full object-cover border-4 border-white/80 shadow-2xl"
+          />
+        </div>
 
-                <div className="mt-6 rounded-2xl bg-white/10 border border-white/20 px-6 py-4 backdrop-blur-md">
-                  <h3 className="text-2xl md:text-3xl font-extrabold">
-                    Owner
-                  </h3>
+        <div className="mt-7 rounded-3xl bg-white/10 border border-white/20 px-6 py-5 backdrop-blur-xl shadow-2xl">
+          <span className="inline-block rounded-full bg-gradient-to-r from-cyan-400 to-pink-500 px-5 py-2 text-sm font-extrabold uppercase tracking-widest">
+            Owner
+          </span>
 
-                  <p className="mt-2 text-xl md:text-2xl font-bold text-yellow-300">
-                    📞 9058596626
-                  </p>
+          <p className="mt-4 text-2xl md:text-3xl font-black text-yellow-300">
+            📞 9058596626
+          </p>
 
-                  <p className="mt-2 text-sm md:text-base text-white/85">
-                    Web Developer & Trainer
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          </div>
-          
-      </section>
+          <p className="mt-2 text-white/90 font-semibold">
+            Web Developer & Trainer
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* COURSES SECTION */}
       <section>
