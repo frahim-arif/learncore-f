@@ -83,7 +83,7 @@ export default function Home() {
           <img
             src="https://frahim.vercel.app/_next/image?url=%2Fimages%2F1.jpg&w=384&q=75"
             alt="Owner"
-            className="absolute inset-[13px] z-10 w-[calc(100%-26px)] h-[calc(100%-26px)] rounded-full object-cover border-4 border-white shadow-2xl"
+            className="absolute inset-[13px] z-10 w-[calc(100%-26px)] h-[calc(100%-26px)] rounded-full object-cover shadow-2xl"
           />
         </div>
 
