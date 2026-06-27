@@ -150,64 +150,157 @@ export default function Home() {
   </div>
 </section>
 
-      {/* WHY US */}
-      <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="card">
-          <div className="text-3xl mb-3">💻</div>
-          <h3 className="text-xl font-bold">Practical Projects</h3>
-          <p className="text-gray-600 mt-2">
-            Real websites aur apps banao, jo portfolio me dikha sako.
-          </p>
+{/* WHY CHOOSE US */}
+<section className="py-16">
+  <div className="text-center max-w-3xl mx-auto mb-12">
+    <span className="inline-block px-4 py-2 rounded-full bg-blue-100 text-blue-700 font-bold">
+      ⭐ Why Choose Us
+    </span>
+
+    <h2 className="mt-4 text-3xl md:text-5xl font-black text-gray-900">
+      Learn with{" "}
+      <span className="bg-gradient-to-r from-blue-700 via-purple-600 to-pink-500 bg-clip-text text-transparent">
+        Real Experience
+      </span>
+    </h2>
+
+    <p className="mt-4 text-gray-600 text-lg">
+      Hum sirf theory nahi, balki industry level practical training dete hain.
+    </p>
+  </div>
+
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+    <div className="group rounded-3xl bg-white p-8 shadow-lg border border-gray-100 hover:-translate-y-3 hover:shadow-2xl transition-all duration-300">
+      <div className="w-16 h-16 rounded-2xl bg-gradient-to-r from-blue-600 to-cyan-500 flex items-center justify-center text-3xl text-white mb-6 group-hover:rotate-6 transition">
+        💻
+      </div>
+
+      <h3 className="text-2xl font-bold text-gray-900">
+        Practical Projects
+      </h3>
+
+      <p className="mt-3 text-gray-600">
+        Real websites, Admin Panels, APIs aur Live Projects banaoge jo
+        portfolio me use kar sakte ho.
+      </p>
+    </div>
+
+    <div className="group rounded-3xl bg-white p-8 shadow-lg border border-gray-100 hover:-translate-y-3 hover:shadow-2xl transition-all duration-300">
+      <div className="w-16 h-16 rounded-2xl bg-gradient-to-r from-purple-600 to-pink-500 flex items-center justify-center text-3xl text-white mb-6 group-hover:rotate-6 transition">
+        👨‍🏫
+      </div>
+
+      <h3 className="text-2xl font-bold text-gray-900">
+        Live Mentorship
+      </h3>
+
+      <p className="mt-3 text-gray-600">
+        Personal guidance, live doubt solving aur project review ke sath
+        complete support.
+      </p>
+    </div>
+
+    <div className="group rounded-3xl bg-white p-8 shadow-lg border border-gray-100 hover:-translate-y-3 hover:shadow-2xl transition-all duration-300">
+      <div className="w-16 h-16 rounded-2xl bg-gradient-to-r from-yellow-500 to-orange-500 flex items-center justify-center text-3xl text-white mb-6 group-hover:rotate-6 transition">
+        🏆
+      </div>
+
+      <h3 className="text-2xl font-bold text-gray-900">
+        Certificate
+      </h3>
+
+      <p className="mt-3 text-gray-600">
+        Course complete hone ke baad professional certificate aur project
+        portfolio milega.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+{/* LEARNING ROADMAP */}
+
+<section className="relative overflow-hidden rounded-[40px] bg-gradient-to-br from-slate-950 via-blue-900 to-indigo-900 px-6 py-12 md:p-14 text-white">
+
+  <div className="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-cyan-400/20 blur-3xl"></div>
+
+  <div className="absolute -bottom-24 -left-24 w-72 h-72 rounded-full bg-pink-500/20 blur-3xl"></div>
+
+  <div className="relative text-center max-w-3xl mx-auto">
+
+    <span className="inline-block rounded-full bg-white/10 px-4 py-2 text-sm font-bold">
+      🚀 Learning Roadmap
+    </span>
+
+    <h2 className="mt-4 text-3xl md:text-5xl font-black">
+      Complete{" "}
+      <span className="bg-gradient-to-r from-cyan-300 via-yellow-300 to-pink-400 bg-clip-text text-transparent">
+        Full Stack Journey
+      </span>
+    </h2>
+
+    <p className="mt-4 text-white/80">
+      Zero se Professional Full Stack Developer banne ka complete roadmap.
+    </p>
+
+  </div>
+
+  <div className="relative mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+    {[
+      {
+        no: "01",
+        title: "HTML & CSS",
+        icon: "🎨",
+        color: "from-cyan-500 to-blue-600",
+      },
+      {
+        no: "02",
+        title: "JavaScript",
+        icon: "⚡",
+        color: "from-yellow-500 to-orange-500",
+      },
+      {
+        no: "03",
+        title: "React & Next.js",
+        icon: "⚛️",
+        color: "from-purple-600 to-pink-500",
+      },
+      {
+        no: "04",
+        title: "Node.js & MongoDB",
+        icon: "🚀",
+        color: "from-green-500 to-emerald-600",
+      },
+    ].map((item) => (
+      <div
+        key={item.no}
+        className="group rounded-3xl border border-white/10 bg-white/10 backdrop-blur-xl p-7 hover:-translate-y-3 hover:bg-white/15 transition-all duration-300"
+      >
+        <div
+          className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${item.color} flex items-center justify-center text-3xl shadow-lg`}
+        >
+          {item.icon}
         </div>
 
-        <div className="card">
-          <div className="text-3xl mb-3">👨‍🏫</div>
-          <h3 className="text-xl font-bold">Mentorship</h3>
-          <p className="text-gray-600 mt-2">
-            Step-by-step guidance aur project support milega.
-          </p>
+        <div className="mt-5 text-sm text-cyan-300 font-bold">
+          STEP {item.no}
         </div>
 
-        <div className="card">
-          <div className="text-3xl mb-3">🏆</div>
-          <h3 className="text-xl font-bold">Certificate</h3>
-          <p className="text-gray-600 mt-2">
-            Course complete karne ke baad certificate milega.
-          </p>
-        </div>
-      </section>
+        <h3 className="mt-2 text-2xl font-bold">
+          {item.title}
+        </h3>
 
-      {/* LEARNING PATH */}
-      <section className="rounded-3xl bg-gray-50 p-6 md:p-10">
-        <div className="text-center max-w-2xl mx-auto mb-8">
-          <p className="text-blue-700 font-semibold">Learning Path</p>
-          <h2 className="text-3xl font-extrabold mt-1">
-            Kaise Sikhoge?
-          </h2>
-          <p className="text-gray-600 mt-2">
-            Basic se start karke real fullstack project tak complete roadmap.
-          </p>
-        </div>
+        <p className="mt-3 text-white/75">
+          Practical Classes, Live Projects, Assignments aur Interview
+          Preparation.
+        </p>
+      </div>
+    ))}
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
-          {[
-            "HTML & CSS",
-            "JavaScript",
-            "React & Next.js",
-            "Node.js & MongoDB",
-          ].map((item, index) => (
-            <div key={item} className="bg-white rounded-2xl p-5 shadow-sm">
-              <div className="h-10 w-10 rounded-full bg-blue-700 text-white flex items-center justify-center font-bold mb-4">
-                {index + 1}
-              </div>
-              <h3 className="font-bold">{item}</h3>
-              <p className="text-sm text-gray-600 mt-2">
-                Practical lessons aur assignments ke sath.
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
+  </div>
+</section>
 
       {/* CTA */}
       <section className="rounded-3xl bg-gray-900 text-white p-8 md:p-12 text-center">
