@@ -13,13 +13,13 @@ export const COURSES = [
     title: "Frontend Development Level-2",
     price: 3999,
     hours: 90,
-    desc: "Bootstrap,ReactJs,Firebase,Tailwind,NextJs",
+    desc: "Bootstrap,ReactJs,Firebase,Tailwind<br>NextJs",
     details:
       "Is course me Node.js, Express.js, REST API, Authentication aur MongoDB sikhaya jayega.",
   },
   {
     id: "Backend",
-    title: "NodeJs,ExpressJs,Mongodb,Mongooes,AWS,PaymentGetway",
+    title: "NodeJs,ExpressJs,Mongodb<br>Mongooes,AWS,PaymentGetway",
     price: 3999,
     hours: 85,
     desc: "Frontend, Backend and Real Projects",
