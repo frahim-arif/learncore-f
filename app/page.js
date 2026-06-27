@@ -9,17 +9,19 @@ export default function Home() {
   return (
     <div className="space-y-12">
       {/* HERO SECTION */}
-<section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-950 via-blue-900 to-purple-900 text-white p-6 md:p-12">
-  <div className="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-cyan-400/20 blur-3xl"></div>
-  <div className="absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-pink-500/20 blur-3xl"></div>
+<section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#020617] via-[#1e1b4b] to-[#581c87] text-white px-5 py-10 md:p-12">
+  {/* Background Glow */}
+  <div className="absolute -top-24 -right-24 h-80 w-80 rounded-full bg-cyan-400/20 blur-3xl"></div>
+  <div className="absolute -bottom-24 -left-24 h-80 w-80 rounded-full bg-pink-500/20 blur-3xl"></div>
 
-  <div className="relative max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-    <div>
+  <div className="relative max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    {/* Left */}
+    <div className="text-center md:text-left">
       <span className="inline-block rounded-full bg-white/15 px-4 py-2 text-sm font-semibold mb-5">
         🚀 Learn • Build • Earn
       </span>
 
-      <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
+      <h1 className="text-4xl md:text-6xl font-black leading-tight">
         Become a{" "}
         <span className="bg-gradient-to-r from-yellow-300 via-pink-400 to-cyan-300 bg-clip-text text-transparent">
           Web Developer
@@ -27,12 +29,12 @@ export default function Home() {
         with Real Projects
       </h1>
 
-      <p className="mt-5 text-lg text-white/90">
+      <p className="mt-5 text-base md:text-lg text-white/90">
         HTML, CSS, JavaScript, React, Next.js, Node.js aur MongoDB practical
         projects ke sath sikho.
       </p>
 
-      <div className="mt-7 flex flex-wrap gap-3">
+      <div className="mt-7 flex flex-wrap justify-center md:justify-start gap-3">
         <Link
           href="/courses"
           className="px-6 py-3 rounded-xl bg-white text-blue-700 font-bold shadow-lg"
@@ -48,40 +50,44 @@ export default function Home() {
         </Link>
       </div>
 
-      <div className="mt-8 grid grid-cols-3 gap-4">
-        <div className="rounded-2xl bg-white/10 border border-white/15 p-4 text-center">
+      <div className="mt-8 grid grid-cols-3 gap-3">
+        <div className="rounded-2xl bg-white/10 border border-white/15 p-4">
           <h3 className="text-2xl font-bold">3+</h3>
           <p className="text-sm text-white/80">Courses</p>
         </div>
 
-        <div className="rounded-2xl bg-white/10 border border-white/15 p-4 text-center">
+        <div className="rounded-2xl bg-white/10 border border-white/15 p-4">
           <h3 className="text-2xl font-bold">150+</h3>
           <p className="text-sm text-white/80">Hours</p>
         </div>
 
-        <div className="rounded-2xl bg-white/10 border border-white/15 p-4 text-center">
+        <div className="rounded-2xl bg-white/10 border border-white/15 p-4">
           <h3 className="text-2xl font-bold">100%</h3>
           <p className="text-sm text-white/80">Practical</p>
         </div>
       </div>
     </div>
 
+    {/* Right */}
     <div className="flex justify-center">
       <div className="text-center">
-        <div className="relative mx-auto w-44 h-44 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-80 lg:h-80">
+        {/* Profile Image */}
+        <div className="relative mx-auto w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-80 lg:h-80">
           <div className="absolute -inset-6 rounded-full bg-cyan-400/20 blur-3xl"></div>
 
-          <div className="absolute inset-0 rounded-full bg-[conic-gradient(#06b6d4,#3b82f6,#8b5cf6,#ec4899,#f59e0b,#06b6d4)] animate-spin-slow"></div>
+          {/* Animated Ring */}
+          <div className="absolute inset-0 rounded-full bg-[conic-gradient(from_0deg,#00f5ff,#2563eb,#7c3aed,#ff00cc,#ffb703,#00f5ff)] animate-spin"></div>
 
-          <div className="absolute inset-[6px] rounded-full bg-slate-950"></div>
+          <div className="absolute inset-[7px] rounded-full bg-[#020617]"></div>
 
           <img
             src="https://frahim.vercel.app/_next/image?url=%2Fimages%2F1.jpg&w=384&q=75"
             alt="Owner"
-            className="absolute inset-[12px] z-10 w-[calc(100%-24px)] h-[calc(100%-24px)] rounded-full object-cover border-4 border-white/80 shadow-2xl"
+            className="absolute inset-[13px] z-10 w-[calc(100%-26px)] h-[calc(100%-26px)] rounded-full object-cover border-4 border-white shadow-2xl"
           />
         </div>
 
+        {/* Owner Card */}
         <div className="mt-7 rounded-3xl bg-white/10 border border-white/20 px-6 py-5 backdrop-blur-xl shadow-2xl">
           <span className="inline-block rounded-full bg-gradient-to-r from-cyan-400 to-pink-500 px-5 py-2 text-sm font-extrabold uppercase tracking-widest">
             Owner
@@ -99,7 +105,6 @@ export default function Home() {
     </div>
   </div>
 </section>
-
       {/* COURSES SECTION */}
       <section>
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
