@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -8,7 +9,7 @@ export default function LoginPage() {
   const router = useRouter();
 
   const [form, setForm] = useState({
-    email: "",
+    username: "",
     password: "",
   });
 
@@ -16,23 +17,16 @@ export default function LoginPage() {
   const [msg, setMsg] = useState("");
   const [success, setSuccess] = useState(false);
 
-  const handleChange = (e) => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value,
-    });
-  };
-
   const handleLogin = async (e) => {
     e.preventDefault();
-
     setLoading(true);
     setMsg("");
-    setSuccess(false);
 
    try {
+  console.log("API URL:", process.env.NEXT_PUBLIC_API_URL);
+
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/login`,
+    `${process.env.NEXT_PUBLIC_API_URL}/api/student/login`,
     {
       method: "POST",
       headers: {
@@ -42,29 +36,26 @@ export default function LoginPage() {
     }
   );
 
-  const data = await res.json();
+      const data = await res.json();
 
-  if (data.success) {
-    localStorage.setItem("token", data.token);
-    localStorage.setItem("user", JSON.stringify(data.user));
+      if (!res.ok || !data.success) {
+        throw new Error(data.message || "Login failed");
+      }
 
-    setSuccess(true);
-    setMsg("Login successful");
+      localStorage.setItem("studentToken", data.token);
+      localStorage.setItem("student", JSON.stringify(data.student));
 
-    router.push("/dashboard");
-  } else {
-    setSuccess(false);
-    setMsg(data.message || "Login failed");
-  }
-} catch (err) {
-  console.error(err);
+      setSuccess(true);
+      setMsg("Login successful!");
 
-  setSuccess(false);
-  setMsg("Server error. Please try again.");
-} finally {
-  setLoading(false);
-}
-  }
+      router.push("/my-courses");
+    } catch (error) {
+      setSuccess(false);
+      setMsg(error.message || "Server error. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <main className="min-h-screen bg-gray-50 flex items-center justify-center px-4 py-16">
@@ -79,22 +70,25 @@ export default function LoginPage() {
           </h1>
 
           <p className="mt-2 text-gray-500">
-            Login to access your purchased courses.
+            Login to access your enrolled courses.
           </p>
         </div>
 
         <form onSubmit={handleLogin} className="mt-8 space-y-5">
           <div>
             <label className="block text-sm font-semibold text-gray-700 mb-2">
-              Email Address
+              Username
             </label>
 
             <input
-              name="email"
-              type="email"
-              value={form.email}
-              onChange={handleChange}
-              placeholder="Enter your email"
+              name="username"
+              type="text"
+              value={form.username}
+              onChange={(e) =>
+                setForm({ ...form, username: e.target.value })
+              }
+              placeholder="Enter your username"
+              autoComplete="username"
               className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none focus:border-blue-600"
               required
             />
@@ -109,18 +103,20 @@ export default function LoginPage() {
               name="password"
               type="password"
               value={form.password}
-              onChange={handleChange}
+              onChange={(e) =>
+                setForm({ ...form, password: e.target.value })
+              }
               placeholder="Enter your password"
+              autoComplete="current-password"
               className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none focus:border-blue-600"
               required
             />
           </div>
 
           {msg && (
-            <p
-              className={`text-center text-sm font-medium ${success ? "text-green-600" : "text-red-500"
-                }`}
-            >
+            <p className={`text-center text-sm font-medium ${
+              success ? "text-green-600" : "text-red-500"
+            }`}>
               {msg}
             </p>
           )}
@@ -135,11 +131,14 @@ export default function LoginPage() {
         </form>
 
         <p className="mt-6 text-center text-sm text-gray-600">
-          Don&apos;t have an account?{" "}
-          <Link href="/register" className="text-blue-600 font-semibold">
-            Register
-          </Link>
+          Don't have an account? Contact your course administrator.
         </p>
+
+        <div className="mt-4 text-center">
+          <Link href="/courses" className="text-blue-600 font-semibold text-sm">
+            Browse Courses
+          </Link>
+        </div>
       </div>
     </main>
   );
