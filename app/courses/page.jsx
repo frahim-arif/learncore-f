@@ -31,6 +31,7 @@ export default function CoursesPage() {
         });
 
         const data = await res.json();
+        console.log("COURSES API RESPONSE:", data);
 
         if (res.status === 401) {
           localStorage.removeItem("studentToken");
