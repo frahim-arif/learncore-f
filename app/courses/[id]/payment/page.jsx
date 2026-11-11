@@ -38,6 +38,7 @@ export default function CoursePaymentPage() {
         );
 
         const data = await res.json();
+        console.log("PAYMENT INFO API RESPONSE:", data);
 
         if (res.status === 401) {
           localStorage.removeItem("studentToken");
