@@ -177,8 +177,8 @@ export default function CoursePaymentPage() {
   if (!paymentInfo) return null;
 
   const course = paymentInfo.course || {};
-  const title = paymentInfo.title || course.title || "Course";
-  const amount = paymentInfo.amount ?? course.price ?? 0;
+ const courseTitle = paymentInfo.course?.title || paymentInfo.title || course.title || "";
+ const amount = paymentInfo.course?.amount ?? paymentInfo.amount ?? course.price ?? 0;
   const upiId = paymentInfo.upiId || "";
   const qrImage = paymentInfo.qrImage || "/images/upi-qr.png";
   const paymentStatus = String(
