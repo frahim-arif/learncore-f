@@ -258,7 +258,7 @@ export default function CoursePaymentPage() {
           </h2>
 
           <h3 className="text-2xl font-black mt-5 text-blue-800">
-            {title}
+            {courseTitle}
           </h3>
 
           <div className="mt-7 bg-blue-50 rounded-2xl p-5">
