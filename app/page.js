@@ -81,10 +81,10 @@ export default function Home() {
           <div className="absolute inset-[7px] rounded-full bg-[#020617]"></div>
 
           <img
-            src="https://frahim.vercel.app/_next/image?url=%2Fimages%2F1.jpg&w=384&q=75"
-            alt="Owner"
-            className="absolute inset-[13px] z-10 w-[calc(100%-26px)] h-[calc(100%-26px)] rounded-full object-cover shadow-2xl"
-          />
+  src="/images/1.jpg"
+  alt="Owner"
+  className="absolute inset-[13px] z-10 w-[calc(100%-26px)] h-[calc(100%-26px)] rounded-full object-cover shadow-2xl"
+/>
         </div>
 
         {/* Owner Card */}
